@@ -2,32 +2,41 @@
 <html lang="en">
 
 <head>
-	<title>Sarah Bray</title>
-	<!-- META -->
-	<meta charset="utf-8">
-	<!-- whatever the width of device, content matches it -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css"  href="<?php echo get_template_directory_uri(); ?>/dist/css/normalize.css">
-	<link rel="stylesheet" type="text/css"  href="<?php echo get_template_directory_uri(); ?>/dist/css/main.css">
-	<link rel="stylesheet" type="text/css"  href="<?php echo get_template_directory_uri(); ?>/dist/css/style.css">
+    <meta charset="UTF-8">
+    <!--
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="masonry.pkgd.min.js"></script>
+
+    <title>
+        <?php the_title()?> |  <?php bloginfo('name'); ?></title>
+
+
+    <h1>
+        <a href="index.html">
+            <font color="#364357">SB</font>
+            <font color="#BABABA">Design</font>
+        </a>
+    </h1>
+
+    <div id="social">
+        <a href="https://twitter.com/snibsi" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/snibeti/" class="fa fa-instagram"></a>
+        <a href="https://dribbble.com/Snibeti" class="fa fa-dribbble"></a>
+        <a href="https://www.linkedin.com/in/sarah-bray-0b910b11b" class="fa fa-linkedin"></a>
+    </div>
+
+    <?php 
+            wp_nav_menu([
+                'theme_location'  => 'main',
+                'container'       => 'ul',
+                'menu_id'      => 'nav',
+                'menu_class'   => 'main',
+            ]);
+        ?>
+
+    <?php wp_head(); ?>
 </head>
-
-
-<h3><a>SB DESIGN</a></h3>
-
-
-<ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Misc Works</a></li>
-    <li><a href="#">Archive</a></li>
-</ul>
-
-
-<ul>
-    <li>img</li>
-    <li>About</li>
-    <li>Misc Works</li>
-    <li>Archive</li>
-</ul>
