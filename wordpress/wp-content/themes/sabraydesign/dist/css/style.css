@@ -778,6 +778,7 @@ img {
     text-decoration: none;
     list-style-type: none;
     right: 10%;
+    text-align: right;
 
 }
 
@@ -1342,7 +1343,8 @@ img {
         line-height: 0;
         float: right;
         display: inline-block;
-        padding-right: 1.5em;
+        padding-right: 2em;
+        padding-bottom:1em;
     }
     
 /* Search Styles */ 

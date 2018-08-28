@@ -35,6 +35,19 @@ function register_menus()
 }
 add_action('init', 'register_menus');
 
+/**
+ * Register our sidebars and widgets into our theme
+ *
+ * @link https://codex.wordpress.org/Function_Reference/register_sidebar
+ */
+function register_widgets()
+{
+    register_sidebar([
+        'name'          => 'Blog Sidebar',
+        'id'            => 'sidebar',
+    ]);
+}
+add_action('widgets_init', 'register_widgets');
 
 /**
  * Add post thumbnail support to theme

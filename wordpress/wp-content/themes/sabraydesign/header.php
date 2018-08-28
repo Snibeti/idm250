@@ -16,7 +16,7 @@
 
 
     <h1>
-        <a href="index.html">
+        <a href="<?php echo home_url(); ?> ">
             <font color="#364357">SB</font>
             <font color="#BABABA">Design</font>
         </a>
