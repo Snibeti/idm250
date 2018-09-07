@@ -26,5 +26,4 @@ get_header(); ?>
          <h2>Sorry, No Post Found</h2>
    <?php endif; ?>
 </div>
-</body>
 <?php get_footer(); ?>

@@ -16,13 +16,8 @@ function load_theme_assets()
     // $media can specify which type of media to load this stylesheet in, such as ‘all’, ‘screen’, ‘print’ or ‘handheld.’
     wp_enqueue_style('style', get_template_directory_uri() . '/dist/css/style.css');
     wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
-//    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/dist/js/bootstrap.js ');
-//    wp_enqueue_script('smooth-js', get_template_directory_uri() . '/dist/js/SmoothScroll.js ');
-//    wp_enqueue_script('isotope', get_template_directory_uri() . '/dist/js/jquery.isotope.js ');
-//    wp_enqueue_script('carousel', get_template_directory_uri() . '/dist/js/owl.carousel.js ');
-//    wp_enqueue_script('way', get_template_directory_uri() . '/dist/js/jquery.waypoints.min.js ');
-//    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/main.js');
-//    wp_enqueue_script('wow', get_template_directory_uri() . '/dist/js/wow.min.js ');
+    wp_enqueue_script('masonry', get_template_directory_uri() . 'https://masonry.desandro.com/masonry.pkgd.min.js');
+    wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/main.js ');
 }
 add_action('wp_enqueue_scripts', 'load_theme_assets');
 
@@ -33,6 +28,17 @@ function register_menus()
         'footer' => __('Footer Navigation'),
     ]);
 }
+
+// ignore pages in search
+if (!is_admin()) {
+    function wpb_search_filter($query) {
+    if ($query->is_search) {
+    $query->set('post_type', 'post');
+    }
+    return $query;
+    }
+    add_filter('pre_get_posts','wpb_search_filter');
+    }
 add_action('init', 'register_menus');
 
 /**
